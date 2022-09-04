@@ -1,0 +1,149 @@
+.container
+  width: 1100px
+  min-height: 100vh
+  padding-top: 100px
+  margin: 0 auto
+  background-color: grey
+
+  .menu
+    position: relative
+
+    .row
+
+      &__first
+        cursor: pointer
+        transition: .5s
+        border-radius: 50%
+        position: absolute
+        left: calc(270px + 200px * var(--i))
+        top: 0
+
+        &:hover
+          transform: scale(1.5)
+
+        img
+          display: block
+          text-align: center
+          margin: 20px
+          width: 120px
+          height: 120px
+
+      &__second
+        cursor: pointer
+        transition: .5s
+        border-radius: 50%
+        position: absolute
+        left: calc(270px + 200px * var(--i))
+        top: 200px
+
+        &:hover
+          transform: scale(1.5)
+
+        img
+          display: block
+          text-align: center
+          transition: .5s
+          margin: 20px
+          width: 120px
+          height: 120px
+
+      &__third
+        cursor: pointer
+        transition: .5s
+        border-radius: 50%
+        position: absolute
+        left: calc(270px + 200px * var(--i))
+        top: 400px
+
+        &:hover
+          transform: scale(1.5)
+
+        img
+          display: block
+          text-align: center
+          transition: .5s
+          margin: 20px
+          width: 120px
+          height: 120px
+
+    &_active
+      transition: .5s
+
+      .row
+
+        &__first
+          top: calc(100px + 120px * var(--i))
+          left: 100px
+
+          img
+            display: block
+            text-align: center
+            width: 60px
+            height: 60px
+
+          &:hover
+            transform: scale(1.2)
+            box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+            border-radius: 50%
+
+        &__second
+          top: calc(460px + 120px * var(--i))
+          left: 100px
+
+          img
+            display: block
+            text-align: center
+            width: 60px
+            height: 60px
+
+          &:hover
+            transform: scale(1.2)
+            box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+            border-radius: 50%
+
+        &__third
+          top: calc(820px + 200px * var(--i))
+          left: 100px
+
+          img
+            display: block
+            text-align: center
+            width: 60px
+            height: 60px
+
+          &:hover
+            transform: scale(1.2)
+            box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+            border-radius: 50%
+
+        &_active
+          background-color: #F9DEB1
+          box-shadow: 0 0 20px #F9DEB1
+          border-radius: 50%
+
+    .home
+      transition: .5s
+      position: absolute
+      cursor: pointer
+      border-radius: 50%
+      top: -20px
+      left: 100px
+      animation: home .5s forwards
+
+      img
+        display: block
+        text-align: center
+        margin: 20px
+        width: 60px
+        height: 60px
+
+      &:hover
+        transform: scale(1.2)
+        box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+        border-radius: 50%
+
+  @keyframes home
+    0%
+      opacity: 0
+    100%
+      opacity: 1
