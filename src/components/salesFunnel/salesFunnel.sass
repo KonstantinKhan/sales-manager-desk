@@ -1,0 +1,23 @@
+.stage
+  display: flex
+  flex-direction: column
+  justify-content: center
+  height: 48px
+  background-color: greenyellow
+  text-align: center
+  border-radius: 8px
+  margin: 4px
+  transition: .5s
+  animation: funnel .5s forwards
+
+  &:hover
+    transition: .5s
+    transform: scale(1.2)
+
+
+
+@keyframes funnel
+  0%
+    opacity: 0
+  100%
+    opacity: 1

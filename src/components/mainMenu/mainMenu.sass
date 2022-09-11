@@ -1,0 +1,150 @@
+.menu
+  position: absolute
+  margin-left: calc(50% + 2rem)
+  transform: translate(-25%, -50%)
+  left: 0
+  right: 0
+  top: calc(50% + 1.5rem)
+  bottom: 0
+  transition: 1s
+
+  .row
+
+    &__first
+      cursor: pointer
+      transition: .5s
+      border-radius: 50%
+      position: absolute
+      left: calc(200px * var(--i))
+      top: 0
+
+      &:hover
+        transform: scale(1.5)
+
+      img
+        display: block
+        text-align: center
+        width: 120px
+        height: 120px
+
+    &__second
+      cursor: pointer
+      transition: .5s
+      border-radius: 50%
+      position: absolute
+      left: calc(200px * var(--i))
+      top: 200px
+
+      &:hover
+        transform: scale(1.5)
+
+      img
+        display: block
+        text-align: center
+        transition: .5s
+        width: 120px
+        height: 120px
+
+    &__third
+      cursor: pointer
+      transition: .5s
+      border-radius: 50%
+      position: absolute
+      left: calc(200px * var(--i))
+      top: 400px
+
+      &:hover
+        transform: scale(1.5)
+
+      img
+        display: block
+        text-align: center
+        transition: .5s
+        width: 120px
+        height: 120px
+
+  &_active
+    transition: 1s
+    transform: translate(0, 20%)
+    margin-left: 0
+    left: 0
+    top: 0
+    bottom: 0
+
+    .row
+
+      &__first
+        top: calc(5rem + 6rem * var(--i))
+        left: 100px
+
+        img
+          display: block
+          text-align: center
+          width: 3rem
+          height: 3rem
+
+        &:hover
+          transform: scale(1.2)
+          box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+          border-radius: 50%
+
+      &__second
+        top: calc(23rem + 6rem * var(--i))
+        left: 100px
+
+        img
+          display: block
+          text-align: center
+          width: 3rem
+          height: 3rem
+
+        &:hover
+          transform: scale(1.2)
+          box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+          border-radius: 50%
+
+      &__third
+        top: calc(41rem + 6rem * var(--i))
+        left: 100px
+
+        img
+          display: block
+          text-align: center
+          width: 3rem
+          height: 3rem
+
+        &:hover
+          transform: scale(1.2)
+          box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+          border-radius: 50%
+
+      &_active
+        background-color: #F9DEB1
+        box-shadow: 0 0 20px #F9DEB1
+        border-radius: 50%
+
+  .home
+    transition: .5s
+    position: absolute
+    cursor: pointer
+    border-radius: 50%
+    top: -1rem
+    left: 100px
+    animation: home .5s forwards
+
+    img
+      display: block
+      text-align: center
+      width: 3rem
+      height: 3rem
+
+    &:hover
+      transform: scale(1.2)
+      box-shadow: 0 0 20px #F9DEB1, inset 0 0 20px #F9DEB1
+      border-radius: 50%
+
+@keyframes home
+  0%
+    opacity: 0
+  100%
+    opacity: 1

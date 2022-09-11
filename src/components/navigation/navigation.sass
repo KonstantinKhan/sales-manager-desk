@@ -1,0 +1,40 @@
+@import "src/style/variables"
+
+.navigation
+  position: fixed
+  width: $menu-width
+  height: 100%
+  background-color: $primary-color
+  transition: .5s
+  overflow: hidden
+
+  ul
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+    li
+      position: relative
+      width: 200%
+      list-style: none
+
+      &:hover
+        background: white
+
+      a
+        position: relative
+        display: flex
+        align-items: center
+        width: 100%
+        text-decoration: none
+        color: black
+
+        img
+          padding: 0 10px 0 20px
+          height: 40px
+          min-width: 40px
+
+        span
+          padding: 0 10px
+          line-height: 60px

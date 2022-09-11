@@ -1,14 +1,25 @@
 import React, {Component} from 'react';
 
 import "./app.sass"
-import MainMenu from "../menu/MainMenu";
+import {BrowserRouter} from "react-router-dom";
+import Navigation from "../navigation/Navigation";
+import MenuRoutes from "../menuRoutes/MenuRoutes";
 
 class App extends Component {
 
     render() {
 
         return (
-            <MainMenu/>
+            <>
+                <BrowserRouter>
+                    <div className="container">
+                        <Navigation/>
+                        <div>
+                            <MenuRoutes/>
+                        </div>
+                    </div>
+                </BrowserRouter>
+            </>
         )
     }
 }
