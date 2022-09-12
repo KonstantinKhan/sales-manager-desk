@@ -1,9 +1,11 @@
-import {Component} from "react";
+import { Component } from "react";
+import StageDetails from "../stageDetails/StageDetails";
 
 import "./salesFunnel.sass"
 
 interface State {
-    funnel: Stage[]
+    funnel: Stage[],
+    hovering: boolean
 
 }
 
@@ -44,42 +46,74 @@ class SalesFunnel extends Component<Props, State> {
                 name: "100%",
                 count: 2
             }
-        ]
+        ],
+        hovering: false
+    }
+
+    showDetails() {
+        console.log('show')
+        this.setState({
+            hovering: true
+        })
+    }
+
+    hiddenDetails() {
+        console.log('hidden')
+        this.setState({
+            hovering: false
+        })
     }
 
     render() {
 
         const funnel = this.state.funnel.map(stage => {
-                return <View name={stage.name} count={stage.count}/>
-            }
+            return <View 
+                key={stage.count}
+                stage={stage} 
+                show={() => this.showDetails()}
+                hidden={() => this.hiddenDetails()}
+                hovering={this.state.hovering}/>
+        }
         )
 
 
         return (
-            <div style={
-                {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center'
-                }
-            }>
+            <div
+                style={
+                    {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center'
+                    }
+                }>
                 {funnel}
+
             </div>
         )
     }
 }
 
+interface PropsView {
+    stage: Stage,
+    show: () => void,
+    hidden: () => void,
+    hovering: boolean
+}
+
 const
-    View = (stage: Stage) => {
+    View = (props: PropsView) => {
         return (
             <div
+                onMouseOver={props.show}
+                onMouseLeave={props.hidden}
                 className="stage"
                 style={
                     {
-                        width: stage.count * 20
+                        width: props.stage.count * 20
                     }
                 }>
-                <p>Сделки {stage.name}: {stage.count}</p>
+                <p>Сделки {props.stage.name}: {props.stage.count}</p>
+                {props.hovering ? <StageDetails /> : null}
             </div>
         )
     }
