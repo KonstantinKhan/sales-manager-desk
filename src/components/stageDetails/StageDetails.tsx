@@ -1,10 +1,11 @@
 import { Component } from "react";
+
 import "./stageDetails.sass"
 
 class StageDetails extends Component {
     render() {
         return(
-            <div>
+            <div className="stage-details">
                 Stage details
             </div>
         )
