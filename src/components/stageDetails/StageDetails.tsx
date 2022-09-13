@@ -2,7 +2,17 @@ import { Component } from "react";
 
 import "./stageDetails.sass"
 
-class StageDetails extends Component {
+interface Props {
+
+}
+
+interface State {
+
+}
+
+class StageDetails extends Component<Props, State> {
+
+    
     render() {
         return(
             <div className="stage-details">

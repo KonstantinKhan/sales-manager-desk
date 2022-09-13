@@ -1,11 +1,11 @@
 import { Component } from "react";
 import Stage from "../stage/Stage";
+import StageDetails from "../stageDetails/StageDetails";
 
 import "./salesFunnel.sass"
 
 interface State {
-
-
+    hovering: boolean   
 }
 
 interface Props {
@@ -40,13 +40,20 @@ class SalesFunnel extends Component<Props, State> {
                 name: "100%",
                 count: 2
             }
-        ]
+        ],
+        hovering: false
+    }
+
+    onShow = (show: boolean) => {
+        this.setState({
+            hovering: show
+        })
     }
 
     render() {
-
         const funnel = this.state.funnel.map(stage => {
             return <Stage
+                onShow={this.onShow}
                 stageProps={stage}
             />
         }
@@ -63,7 +70,7 @@ class SalesFunnel extends Component<Props, State> {
                     }
                 }>
                 {funnel}
-
+                {this.state.hovering ? <StageDetails/> : null}
             </div>
         )
     }

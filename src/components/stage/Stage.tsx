@@ -1,7 +1,5 @@
 import { Component } from "react";
 
-import StageDetails from "../stageDetails/StageDetails"
-
 interface StageProps {
     name: string,
     count: number
@@ -9,6 +7,7 @@ interface StageProps {
 
 interface Props {
     stageProps: StageProps
+    onShow: (show: boolean) => void
 }
 
 interface State {
@@ -24,19 +23,27 @@ class Stage extends Component<Props, State> {
     onShowDetails = () => {
         this.setState({
             hovering: true
-        })
+        },
+            () => {
+                this.props.onShow(this.state.hovering)
+            }
+        )
     }
 
     onHiddenDetails = () => {
         this.setState({
             hovering: false
-        })
+        },
+            () => {
+                this.props.onShow(this.state.hovering)
+            })
+
     }
 
     render() {
         return (
             <div
-                onMouseOver={this.onShowDetails}
+                onMouseEnter={this.onShowDetails}
                 onMouseLeave={this.onHiddenDetails}
                 className="stage"
                 style={
@@ -46,7 +53,7 @@ class Stage extends Component<Props, State> {
                     }
                 }>
                 <p>Сделки {this.props.stageProps.name}: {this.props.stageProps.count}</p>
-                {this.state.hovering ? <StageDetails /> : null}
+                {/* {this.state.hovering ? <StageDetails /> : null} */}
             </div>
         )
     }
