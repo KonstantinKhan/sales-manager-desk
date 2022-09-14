@@ -7,34 +7,39 @@
   background-color: $primary-color
   transition: .5s
   overflow: hidden
+  box-shadow: inset -20px 0px 18px 0px rgba(255, 255, 255, .5), inset 10px 0px 18px 0px rgba(0, 0, 0, .5)
 
   ul
     position: absolute
+    padding-top: 20px
     top: 0
     left: 0
     width: 100%
 
     li
       position: relative
-      width: 200%
+      width: 100%
       list-style: none
 
       &:hover
+        transition: 1s
         background: white
 
-      a
-        position: relative
-        display: flex
-        align-items: center
-        width: 100%
-        text-decoration: none
-        color: black
+.menu
+  &__item
+    position: relative
+    margin-bottom: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    text-decoration: none
+    color: black
 
-        img
-          padding: 0 10px 0 20px
-          height: 40px
-          min-width: 40px
-
-        span
-          padding: 0 10px
-          line-height: 60px
+    img
+      margin-top: 10px
+      height: 40px
+      min-width: 40px
+    
+    span
+      margin: 10px 0

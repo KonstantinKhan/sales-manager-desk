@@ -17,43 +17,43 @@ class Navigation extends Component {
             <div className="navigation">
                 <ul>
                     <li key={0}>
-                        <Link to="/target">
+                        <Link className="menu__item" to="/target">
                             <img draggable={false} src={target} alt="target"/>
                             <span>Цели</span>
                         </Link>
                     </li>
                     <li key={1}>
-                        <Link to="/clients">
+                        <Link className="menu__item" to="/clients">
                             <img draggable={false} src={clients} alt="clients"/>
                             <span>Клиенты</span>
                         </Link>
                     </li>
                     <li key={2}>
-                        <Link to="/communicate">
+                        <Link className="menu__item" to="/communicate">
                             <img draggable={false} src={communicate} alt="communicate"/>
                             <span>Контакты</span>
                         </Link>
                     </li>
                     <li key={3}>
-                        <Link to="/handshake">
+                        <Link className="menu__item" to="/handshake">
                             <img draggable={false} src={handshake} alt="handshake"/>
                             <span>Сделки</span>
                         </Link>
                     </li>
                     <li key={4}>
-                        <Link to="/todo">
+                        <Link className="menu__item" to="/todo">
                             <img draggable={false} src={toDoList} alt="todo"/>
                             <span>Задачи</span>
                         </Link>
                     </li>
                     <li key={5}>
-                        <Link to="/ability">
+                        <Link className="menu__item" to="/ability">
                             <img draggable={false} src={ability} alt="ability"/>
                             <span>Возможности</span>
                         </Link>
                     </li>
                     <li key={6}>
-                        <Link to="/kpi">
+                        <Link className="menu__item" to="/kpi">
                             <img draggable={false} src={kpi} alt="KPI"/>
                             <span>KPI</span>
                         </Link>
