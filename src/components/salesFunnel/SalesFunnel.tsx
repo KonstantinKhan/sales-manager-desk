@@ -64,9 +64,16 @@ class SalesFunnel extends Component<Props, State> {
             <div
                 style={
                     {
+                        position: 'relative',
+                        top: '20px',
+                        left: '20px',
+                        width: '400px',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
+                        padding: '10px',
+                        borderRadius: '16px'
                     }
                 }>
                 {funnel}

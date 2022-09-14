@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+import "./stage.sass"
+
 interface StageProps {
     name: string,
     count: number
@@ -43,17 +45,56 @@ class Stage extends Component<Props, State> {
     render() {
         return (
             <div
-                onMouseEnter={this.onShowDetails}
-                onMouseLeave={this.onHiddenDetails}
-                className="stage"
                 style={
                     {
-                        position: "relative",
-                        width: this.props.stageProps.count * 20
+                        position: 'relative',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                        margin: '8px',
+                        paddingBottom: '8px',
+                        borderBottom: '1px dashed rgba(0, 0, 0, .3)'
                     }
-                }>
-                <p>Сделки {this.props.stageProps.name}: {this.props.stageProps.count}</p>
-                {/* {this.state.hovering ? <StageDetails /> : null} */}
+                }
+            >
+                <div
+                    style={
+                        {
+                            textAlign: 'center',
+                            display: 'flex',
+                            alignItems: 'center',
+                            position: 'absolute',
+                            left: 0,
+                            // top: 0,
+                            // bottom: 0,
+                            // margin: 'auto 0'
+                        }
+                    }
+                >
+                    <span className="stage__percent">{this.props.stageProps.name}</span>
+                </div>
+                <div
+                    onMouseEnter={this.onShowDetails}
+                    onMouseLeave={this.onHiddenDetails}
+                    className="stage"
+                    style={
+                        {
+                            marginLeft: '100px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            position: "relative",
+                            width: this.props.stageProps.count * 12,
+                        }
+                    }>
+
+                    <span
+                        className="deals__count"
+                    >
+                        {this.props.stageProps.count}
+                    </span>
+                    {/* {this.state.hovering ? <StageDetails /> : null} */}
+                </div>
             </div>
         )
     }
