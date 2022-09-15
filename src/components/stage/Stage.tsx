@@ -5,21 +5,31 @@ import "./stage.sass"
 interface StageProps {
     name: string,
     count: number
+
 }
 
 interface Props {
     stageProps: StageProps
-    onShow: (show: boolean) => void
+    onShow: (show: boolean) => void,
+    notification: boolean
 }
 
 interface State {
-    hovering: boolean
+    hovering: boolean,
+    notification: boolean
 }
 
 class Stage extends Component<Props, State> {
 
+    componentDidMount(): void {
+        this.setState({
+            notification: this.props.notification
+        })
+    }
+
     state = {
-        hovering: false
+        hovering: false,
+        notification: false
     }
 
     onShowDetails = () => {
@@ -54,7 +64,9 @@ class Stage extends Component<Props, State> {
                         width: '100%',
                         margin: '8px',
                         paddingBottom: '8px',
-                        borderBottom: '1px dashed rgba(0, 0, 0, .3)'
+                        borderBottom: '1px dashed rgba(0, 0, 0, .3)',
+                        // backgroundColor: `${this.state.notification ? 'red' : 'none'}`,
+                        // borderRadius: `${this.state.notification ? '16px' : '0px'}`
                     }
                 }
             >
@@ -66,9 +78,6 @@ class Stage extends Component<Props, State> {
                             alignItems: 'center',
                             position: 'absolute',
                             left: 0,
-                            // top: 0,
-                            // bottom: 0,
-                            // margin: 'auto 0'
                         }
                     }
                 >
@@ -85,6 +94,7 @@ class Stage extends Component<Props, State> {
                             justifyContent: 'center',
                             position: "relative",
                             width: this.props.stageProps.count * 12,
+                            boxShadow: `${this.state.notification ? '0 0 16px #E65100': 'none'}`
                         }
                     }>
 

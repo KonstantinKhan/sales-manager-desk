@@ -5,7 +5,7 @@ import StageDetails from "../stageDetails/StageDetails";
 import "./salesFunnel.sass"
 
 interface State {
-    hovering: boolean   
+    hovering: boolean
 }
 
 interface Props {
@@ -51,14 +51,15 @@ class SalesFunnel extends Component<Props, State> {
     }
 
     render() {
+        let count = 0
         const funnel = this.state.funnel.map(stage => {
+            count++
             return <Stage
                 onShow={this.onShow}
                 stageProps={stage}
+                notification={count == 1 ? true : false}
             />
-        }
-        )
-
+        })
 
         return (
             <div
@@ -77,7 +78,7 @@ class SalesFunnel extends Component<Props, State> {
                     }
                 }>
                 {funnel}
-                {this.state.hovering ? <StageDetails/> : null}
+                {/* {this.state.hovering ? <StageDetails /> : null} */}
             </div>
         )
     }
