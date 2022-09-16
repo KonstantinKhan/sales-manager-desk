@@ -6,7 +6,7 @@ import handshake from "../../resources/icons/handshake.png";
 import toDoList from "../../resources/icons/to-do-list.png";
 import ability from "../../resources/icons/ability.png";
 import kpi from "../../resources/icons/kpi.png";
-import home from "../../resources/icons/home.png";
+import home from "../../resources/icons/main.png";
 import {Link} from "react-router-dom";
 
 import "./mainMenu.sass"

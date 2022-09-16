@@ -8,7 +8,7 @@ import handshake from "../../resources/icons/handshake.png";
 import toDoList from "../../resources/icons/to-do-list.png";
 import ability from "../../resources/icons/ability.png";
 import kpi from "../../resources/icons/kpi.png"
-import home from "../../resources/icons/home.png"
+import main from "../../resources/icons/main.png"
 
 import "./navigation.sass"
 
@@ -18,8 +18,8 @@ class Navigation extends Component {
             <div className="navigation">
                 <ul>
                     <li key={0}>
-                        <Link className="menu__item" to="/home">
-                            <img draggable={false} src={home} alt="target" />
+                        <Link className="menu__item" to="/main">
+                            <img draggable={false} src={main} alt="target" />
                             <span>Главная</span>
                         </Link>
                     </li>
