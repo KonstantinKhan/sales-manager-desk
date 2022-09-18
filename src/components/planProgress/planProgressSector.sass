@@ -1,0 +1,77 @@
+@import "src/style/variables"
+@import "src/style/card"
+
+$angleCorrection: 135deg
+
+.progress
+  position: relative
+  display: flex
+  justify-content: space-between
+
+  &__chart
+    position: relative
+    top: 56px
+    height: 200px
+    width: 200px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    svg
+      height: 200px
+      width: 200px
+
+      circle
+        fill: none
+        stroke-width: 40px
+        stroke: #000
+        stroke-dasharray: 628
+        stroke-dashoffset: 628
+        transform-origin: 50% 50%
+        transform: rotate($angleCorrection)
+        transition: .5s
+
+        &:nth-child(1)
+          stroke-dashoffset: calc(628 - (628 * 60) / 100)
+          stroke-width: 30px
+          stroke: $plan-color
+
+        &:nth-child(2)
+          stroke-width: 40px
+          stroke-dashoffset: 626
+          transform: rotate(18deg)
+          stroke: #FB8C00
+
+        &:nth-child(3)
+          stroke-width: 18px
+          stroke: $fact-color
+          //filter: drop-shadow(0 0 2px rgba(167, 255, 235, .6)) drop-shadow(0 0 4px rgba(167, 255, 235, .4))
+
+    .percent
+      position: absolute
+      font-size: 3rem
+      font-weight: bold
+      color: $fact-color
+
+  &__value
+    padding-top: 40px
+    position: relative
+    width: 300px
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    &__fact
+      font-size: 3rem
+      font-weight: bold
+      color: $fact-color
+      line-height: 3rem
+
+    &__plan
+      font-size: 1.25rem
+      color: rgba(29, 233, 182, .6)
+      line-height: 2rem
+
+    &__currency
+      font-size: 1rem
+

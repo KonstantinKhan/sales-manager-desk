@@ -1,0 +1,43 @@
+@import "src/style/variables"
+
+.plan
+
+  &__probability
+    &__off
+      position: relative
+
+      span
+        line-height: 1.5em
+        color: #BDBDBD
+
+    &__on
+      position: relative
+
+      span
+        line-height: 1.5em
+        color: #BDBDBD
+
+  &__line
+    margin: 20px 0
+    border-radius: 12px
+    width: 500px
+    height: 30px
+    background-color: $plan-color
+
+  &__threshold
+    &__line
+      border-radius: 12px
+      width: 450px
+      height: 30px
+      background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px
+      background-size: 3px 3px
+
+    &__value
+      top: 40px
+      height: 20px
+      left: 450px
+      position: absolute
+      border: 1px solid #FB8C00
+
+      &_active
+        box-shadow: 0 0 12px #fff, 0 0 8px #FB8C00, 0 0 4px #000

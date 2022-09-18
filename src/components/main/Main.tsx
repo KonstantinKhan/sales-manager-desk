@@ -1,20 +1,54 @@
 import "./main.sass"
-import {Component} from "react";
+import {PlanProgressSector} from "../planProgress/PlanProgressSector";
+import {GrossProfitOne} from "../../stubs/GrossProfitOne";
+import {useEffect, useState} from "react";
+import {IGrossProfit} from "../../models/IGrossProfit";
+import {Forecast} from "../forecast/Forecast";
 
-interface Props {
+function Main() {
 
+    const [grossProfit, setGrossProfit] = useState<IGrossProfit>({
+        percent: 0, plan: 0, value: 0
+    })
+
+
+    useEffect(() => {
+        setGrossProfit(GrossProfitOne)
+    }, [])
+
+    return (
+        <div>
+            {/*<PlanProgress/>*/}
+            <PlanProgressSector grossProfit={grossProfit}/>
+            <Forecast/>
+
+            <button
+                onClick={
+                    () => {
+                        setGrossProfit({
+                            percent: 90,
+                            plan: 10_000_000,
+                            value: 9_000_000
+                        })
+                    }
+                }
+            >Click
+            </button>
+            <button
+                onClick={
+                    () => {
+                        setGrossProfit({
+                            percent: 40,
+                            plan: 10_000_000,
+                            value: 4_000_000
+                        })
+                    }
+                }
+            >Click
+            </button>
+        </div>
+    );
 }
 
-interface State {
-
-}
-
-class Main extends Component<Props, State> {
-    render() {
-        return (
-            <div></div>
-        );
-    }
-}
 
 export default Main
