@@ -1,0 +1,29 @@
+.sales-funnel
+
+  display: flex
+
+  &__header
+    height: 40px
+    margin-top: 10px
+    text-align: center
+
+  &__stage
+    width: 100px
+    height: 200px
+    border-left: 1px solid #000
+    border-right: 1px solid #000
+    border-bottom: 1px solid #000
+
+    svg
+      transition: .5s
+      cursor: pointer
+
+      &:hover
+        transition: .5s
+        transform: scale(1.05)
+        filter: drop-shadow(10px 10px 10px #311B92)
+
+  &__container
+    height: 400px
+    width: 900px
+    background: #BDBDBD

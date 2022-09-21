@@ -4,6 +4,7 @@ import {GrossProfitOne} from "../../stubs/GrossProfitOne";
 import {useEffect, useState} from "react";
 import {IGrossProfit} from "../../models/IGrossProfit";
 import {Forecast} from "../forecast/Forecast";
+import {SalesFunnelForecast} from "../salesFunnelForecast/SalesFunnelForecast";
 
 function Main() {
 
@@ -21,31 +22,7 @@ function Main() {
             {/*<PlanProgress/>*/}
             <PlanProgressSector grossProfit={grossProfit}/>
             <Forecast/>
-
-            <button
-                onClick={
-                    () => {
-                        setGrossProfit({
-                            percent: 90,
-                            plan: 10_000_000,
-                            value: 9_000_000
-                        })
-                    }
-                }
-            >Click
-            </button>
-            <button
-                onClick={
-                    () => {
-                        setGrossProfit({
-                            percent: 40,
-                            plan: 10_000_000,
-                            value: 4_000_000
-                        })
-                    }
-                }
-            >Click
-            </button>
+            <SalesFunnelForecast/>
         </div>
     );
 }
