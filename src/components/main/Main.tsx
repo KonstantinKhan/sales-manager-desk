@@ -19,10 +19,26 @@ function Main() {
 
     return (
         <div>
-            {/*<PlanProgress/>*/}
-            <PlanProgressSector grossProfit={grossProfit}/>
-            <Forecast/>
-            <SalesFunnelForecast/>
+            <div style={
+                {
+                    display: 'flex',
+                    justifyContent: 'center',
+                }
+            }>
+                <PlanProgressSector grossProfit={grossProfit}/>
+                <Forecast/>
+            </div>
+
+            <div
+                style={
+                    {
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }
+                }
+            >
+                <SalesFunnelForecast/>
+            </div>
         </div>
     );
 }

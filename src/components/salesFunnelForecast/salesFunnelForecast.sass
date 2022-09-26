@@ -1,29 +1,86 @@
-.sales-funnel
+@import "src/style/variables"
 
-  display: flex
+.sales-funnel
+  &__container
+    margin: 40px
+    position: relative
+    padding: 20px 20px 0 20px
+    height: 400px
+    width: 1100px
+    background: $brown-400
+    border-radius: 16px
 
   &__header
-    height: 40px
-    margin-top: 10px
-    text-align: center
+    position: relative
+
+    &__title
+      font-weight: bold
+      font-size: 2rem
+      position: absolute
+      left: 40px
+      color: #BDBDBD
+
+    &__period
+      position: absolute
+      left: 40px
+      top: 50px
+      color: #BDBDBD
+
+  &__diagram
+    margin: 100px auto 0 auto
+    width: 990px
+    display: flex
 
   &__stage
-    width: 100px
-    height: 200px
+    position: relative
+    width: 165px
+    height: 250px
     border-left: 1px solid #000
-    border-right: 1px solid #000
     border-bottom: 1px solid #000
 
+    &__info
+      display: flex
+      flex-direction: column
+
+      &__title
+        font-size: 1.5rem
+        margin-left: 20px
+        color: #BDBDBD
+
+      &__value
+        margin-top: 10px
+        margin-left: 10px
+        font-size: 2rem
+        font-weight: bold
+        color: #BDBDBD
+
+      &__percent
+        margin-top: 10px
+        margin-right: 10px
+        font-size: 1rem
+        text-align: right
+        color: #BDBDBD
+
     svg
+      position: absolute
+      bottom: 0
       transition: .5s
       cursor: pointer
 
+      path
+        transition: .5s
+        animation-name: show
+        animation-duration: 2.5s
+
       &:hover
+        z-index: 1
         transition: .5s
         transform: scale(1.05)
         filter: drop-shadow(10px 10px 10px #311B92)
 
-  &__container
-    height: 400px
-    width: 900px
-    background: #BDBDBD
+@keyframes show
+  from
+    opacity: 0
+
+  to
+    opacity: 1
