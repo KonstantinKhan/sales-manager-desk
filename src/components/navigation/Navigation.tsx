@@ -15,7 +15,7 @@ import "./navigation.sass"
 class Navigation extends Component {
     render() {
         return (
-            <div className="navigation">
+            <div className="navigation col-1">
                 <ul>
                     <li key={0}>
                         <Link className="menu__item" to="/main">

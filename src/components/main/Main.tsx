@@ -18,28 +18,19 @@ function Main() {
     }, [])
 
     return (
-        <div>
-            <div style={
-                {
-                    display: 'flex',
-                    justifyContent: 'center',
-                }
-            }>
-                <PlanProgressSector grossProfit={grossProfit}/>
-                <Forecast/>
+        <>
+            <div className={'grid mr-0 ml-0'}>
+                <div className={'col-offset-1 col-5'}>
+                    <PlanProgressSector grossProfit={grossProfit}/>
+                </div>
+                <div className={'col-5'}>
+                    <Forecast/>
+                </div>
             </div>
-
-            <div
-                style={
-                    {
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }
-                }
-            >
+            <div className={'col-offset-1 col-10'}>
                 <SalesFunnelForecast/>
             </div>
-        </div>
+        </>
     );
 }
 

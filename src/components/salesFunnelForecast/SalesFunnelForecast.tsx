@@ -32,7 +32,7 @@ export const SalesFunnelForecast = () => {
     }
 
     return (
-        <div className={'sales-funnel__container'}>
+        <div className={'sales-funnel__container pt-4 col-12'}>
             <div className={'sales-funnel__header'}>
                 <span className={'sales-funnel__header__title'}>Воронка продаж</span>
                 <span className={'sales-funnel__header__period'}>05 сентября, 2022 - 30 сентября 2022</span>
@@ -43,9 +43,12 @@ export const SalesFunnelForecast = () => {
                         <span className={'sales-funnel__stage__info__title'}>15%</span>
                         <span
                             className={'sales-funnel__stage__info__value'}>{(forecast.stages[0].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[0].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[0].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
-                    <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="165" height="150" viewBox="0 0 165 150"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
                         <path
                             d={`M0 ${firstY(forecast.stages[0].value)} 
                             Q ${firstX} ${secondY(forecast.stages[0].value, forecast.stages[1].value)}
@@ -58,7 +61,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.4s'}
+                            dur={'0.4s'}
                             fill={'freeze'}
                         />
                     </svg>
@@ -66,8 +69,10 @@ export const SalesFunnelForecast = () => {
                 <div className={'sales-funnel__stage'}>
                     <div className={'sales-funnel__stage__info'}>
                         <span className={'sales-funnel__stage__info__title'}>25%</span>
-                        <span className={'sales-funnel__stage__info__value'}>{(forecast.stages[1].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[1].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__value'}>{(forecast.stages[1].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[1].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
                     <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -82,7 +87,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.5s'}
+                            dur={'0.5s'}
                             fill={'freeze'}
                         />
                     </svg>
@@ -90,8 +95,10 @@ export const SalesFunnelForecast = () => {
                 <div className={'sales-funnel__stage'}>
                     <div className={'sales-funnel__stage__info'}>
                         <span className={'sales-funnel__stage__info__title'}>40%</span>
-                        <span className={'sales-funnel__stage__info__value'}>{(forecast.stages[2].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[2].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__value'}>{(forecast.stages[2].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[2].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
                     <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -106,7 +113,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.6s'}
+                            dur={'0.6s'}
                             fill={'freeze'}
                         />
                     </svg>
@@ -114,8 +121,10 @@ export const SalesFunnelForecast = () => {
                 <div className={'sales-funnel__stage'}>
                     <div className={'sales-funnel__stage__info'}>
                         <span className={'sales-funnel__stage__info__title'}>60%</span>
-                        <span className={'sales-funnel__stage__info__value'}>{(forecast.stages[3].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[3].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__value'}>{(forecast.stages[3].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[3].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
                     <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -130,7 +139,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.7s'}
+                            dur={'0.7s'}
                             fill={'freeze'}
                         />
                     </svg>
@@ -138,8 +147,10 @@ export const SalesFunnelForecast = () => {
                 <div className={'sales-funnel__stage'}>
                     <div className={'sales-funnel__stage__info'}>
                         <span className={'sales-funnel__stage__info__title'}>80%</span>
-                        <span className={'sales-funnel__stage__info__value'}>{(forecast.stages[4].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[4].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__value'}>{(forecast.stages[4].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[4].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
                     <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -154,7 +165,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.8s'}
+                            dur={'0.8s'}
                             fill={'freeze'}
                         />
                     </svg>
@@ -162,8 +173,10 @@ export const SalesFunnelForecast = () => {
                 <div className={'sales-funnel__stage'}>
                     <div className={'sales-funnel__stage__info'}>
                         <span className={'sales-funnel__stage__info__title'}>100%</span>
-                        <span className={'sales-funnel__stage__info__value'}>{(forecast.stages[5].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
-                        <span className={'sales-funnel__stage__info__percent'}>{(forecast.stages[5].value/sum * 100).toFixed(1).replace('.',',')}%</span>
+                        <span
+                            className={'sales-funnel__stage__info__value'}>{(forecast.stages[5].value / 1000).toLocaleString('RU', {minimumFractionDigits: 0})}K</span>
+                        <span
+                            className={'sales-funnel__stage__info__percent'}>{(forecast.stages[5].value / sum * 100).toFixed(1).replace('.', ',')}%</span>
                     </div>
                     <svg width="165" height="150" viewBox="0 0 165 150" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -178,7 +191,7 @@ export const SalesFunnelForecast = () => {
                             attributeName={'viewBox'}
                             from={'0 -124 165 150'}
                             to={'0 0 165 150'}
-                            dur={'.9s'}
+                            dur={'0.9s'}
                             fill={'freeze'}
                         />
                     </svg>

@@ -11,7 +11,7 @@ import "./menuRoutes.sass"
 class MenuRoutes extends Component {
     render() {
         return (
-            <div className="content">
+            <div className="col-offset-1 col-11">
                 <Routes>
                     <Route path="/main" element={<Main/>}/>
                     <Route path="/handshake" element={<SalesFunnel/>}/>
