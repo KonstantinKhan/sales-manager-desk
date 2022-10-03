@@ -1,5 +1,5 @@
 import "./salesFunnelForecast.sass"
-import {Forecast} from "../forecast/Forecast";
+import {Forecast} from "../forecast/forecastBar/Forecast";
 import {StubForecastFourth, StubForecastOne, StubForecastSecond, StubForecastThird} from "../../stubs/Forecast";
 
 export const SalesFunnelForecast = () => {

@@ -3,8 +3,10 @@ import {PlanProgressSector} from "../planProgress/PlanProgressSector";
 import {GrossProfitOne} from "../../stubs/GrossProfitOne";
 import {useEffect, useState} from "react";
 import {IGrossProfit} from "../../models/IGrossProfit";
-import {Forecast} from "../forecast/Forecast";
+import {Forecast} from "../forecast/forecastBar/Forecast";
 import {SalesFunnelForecast} from "../salesFunnelForecast/SalesFunnelForecast";
+import ForecastTable from "../forecast/forecastTable/ForecastTable";
+import {locale} from "primereact";
 
 function Main() {
 
@@ -29,6 +31,9 @@ function Main() {
             </div>
             <div className={'col-offset-1 col-10'}>
                 <SalesFunnelForecast/>
+            </div>
+            <div className={'col-offset-1 col-10 '}>
+                <ForecastTable/>
             </div>
         </>
     );
