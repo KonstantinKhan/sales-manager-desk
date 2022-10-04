@@ -32,9 +32,6 @@ function Main() {
             <div className={'col-offset-1 col-10'}>
                 <SalesFunnelForecast/>
             </div>
-            <div className={'col-offset-1 col-10 '}>
-                <ForecastTable/>
-            </div>
         </>
     );
 }

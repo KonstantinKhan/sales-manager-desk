@@ -1,6 +1,8 @@
 import "./forecast.sass"
+import {Link} from "react-router-dom";
 
 export function Forecast() {
+
     return (
         <div className="card grid grid-nogutter">
             <div className="plan__probability__off col-offset-1 col-10 pt-4">
@@ -8,7 +10,9 @@ export function Forecast() {
                 <span className="gross-profit">3 600 000 руб.</span>
                 <div className="plan__line">
                     <div className="fact__line">
-                        <div className="forecast__off__line"></div>
+                        <Link to="/deals">
+                            <div className="forecast__off__line"></div>
+                        </Link>
                     </div>
                 </div>
 

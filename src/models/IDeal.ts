@@ -1,5 +1,6 @@
 export interface IDeal {
     name: string,
     sum: number,
-    sumWithProbability: number
+    sumProbability: number
+    probability: number
 }

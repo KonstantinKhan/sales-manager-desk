@@ -42,7 +42,7 @@ class Navigation extends Component {
                         </Link>
                     </li>
                     <li key={4}>
-                        <Link className="menu__item" to="/handshake">
+                        <Link className="menu__item" to="/deals">
                             <img draggable={false} src={handshake} alt="handshake" />
                             <span>Сделки</span>
                         </Link>
