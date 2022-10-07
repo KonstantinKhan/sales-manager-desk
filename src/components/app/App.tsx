@@ -11,8 +11,13 @@ class App extends Component {
     constructor(props: any) {
         super(props);
         addLocale('ru', {
-            noFilter: 'Без фильтра',
-            contains: 'Содержит'
+            startsWith: 'Начинается с',
+            contains: 'Содержит',
+            notContains: 'Не содержит',
+            endsWith: 'Заканчивается',
+            equals: 'Равно',
+            notEquals: 'Не равно',
+            noFilter: 'Без фильтра'
         })
         locale('ru')
     }

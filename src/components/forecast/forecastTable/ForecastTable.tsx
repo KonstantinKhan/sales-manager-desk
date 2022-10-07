@@ -5,7 +5,7 @@ import {Column} from "primereact/column"
 import {useEffect, useState} from "react";
 import {DealsService} from "../../../services/dealsService";
 import {IDeal} from "../../../models/IDeal";
-import {FilterMatchMode, FilterOperator, FilterService, InputNumber} from "primereact";
+import {ColumnGroup, FilterMatchMode, FilterOperator, FilterService, InputNumber, Row} from "primereact";
 
 const ForecastTable = () => {
 
@@ -18,9 +18,10 @@ const ForecastTable = () => {
         })
     }, [])
 
-    const rowIndexTemplate = (rowData: any, column: any) => {
-        return column.rowIndex + 1
-    }
+    // Константа для определения порядкового номера строки
+    // const rowIndexTemplate = (rowData: any, column: any) => {
+    //     return column.rowIndex + 1
+    // }
 
     const sumFormat = (rowData: any) => {
         return (rowData.sum).toLocaleString('RU', {minimumFractionDigits: 0}) + " руб."
@@ -43,7 +44,6 @@ const ForecastTable = () => {
         "name": {value: null, matchMode: FilterMatchMode.CONTAINS}
     }
 
-
     return (
         <div className={'bg-white'}>
             <DataTable
@@ -52,7 +52,8 @@ const ForecastTable = () => {
                 autoLayout={true}
                 filters={filters}
             >
-                <Column field="i" header="№" body={rowIndexTemplate}></Column>
+                {/*Колонка отображения порядкового номера строки*/}
+                {/*<Column field="i" header="№" body={rowIndexTemplate}></Column>*/}
                 <Column
                     filterField="name"
                     field="name"
@@ -66,7 +67,6 @@ const ForecastTable = () => {
                     sortable
                     filter
                     body={sumFormat}
-                    align="right"
                 ></Column>
                 <Column
                     field="probability"
@@ -74,18 +74,15 @@ const ForecastTable = () => {
                     sortable
                     filter
                     body={probabilityFormat}
-                    align="center"
                 />
                 <Column
                     header={'ВПсВ'}
                     filterField="sumProbability"
                     dataType="numeric"
-                    alignHeader="center"
                     sortable
                     filter
                     body={sumProbabilityFormat}
                     filterElement={sumProbabilityFilter}
-                    align="right"
                 />
             </DataTable>
         </div>
