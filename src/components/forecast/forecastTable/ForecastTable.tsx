@@ -2,10 +2,22 @@
 import "./forecastTable.sass"
 import {DataTable} from "primereact/datatable";
 import {Column} from "primereact/column"
-import {FilterMatchMode, InputNumber} from "primereact";
+import {FilterMatchMode, FilterOperator, InputNumber, MultiSelect} from "primereact";
 import {useGetDealsQuery} from "../../../redux";
+import {useAppSelector} from "../../../redux/hooks";
 
 const ForecastTable = () => {
+
+    const probabilities = [
+        {name: '15%', value: 15},
+        {name: '25%', value: 25},
+        {name: '40%', value: 40},
+        {name: '60%', value: 60},
+        {name: '80%', value: 80},
+        {name: '100%', value: 100},
+    ]
+
+    const probability = useAppSelector(state => state.probability.probability.value && [state.probability.probability.value])
 
     const {data = []} = useGetDealsQuery()
 
@@ -24,9 +36,23 @@ const ForecastTable = () => {
     }
 
     const probabilityFilter = (options: any) => {
-        return <InputNumber
+        return <MultiSelect
             value={options.value}
-            onChange={(e) => options.filterApplyCallback(e.value)}/>
+            options={probabilities}
+            itemTemplate={probabilityItemTemplate}
+            onChange={(e) => options.filterApplyCallback(e.value)}
+            optionLabel="name"
+            placeholder="Все"
+            // maxSelectedLabels={1}
+        />
+    }
+
+    const probabilityItemTemplate = (option: any) => {
+        return (
+            <div className="p-multiselect-representative-option">
+                <span className="image-text">{option.value}%</span>
+            </div>
+        )
     }
 
     const sumProbabilityFilter = (options: any) => {
@@ -36,6 +62,7 @@ const ForecastTable = () => {
     }
 
     const probabilityFormat = (rowData: any) => {
+
         return rowData.probability.toString() + "%"
     }
 
@@ -47,7 +74,7 @@ const ForecastTable = () => {
     const filters = {
         "name": {value: null, matchMode: FilterMatchMode.CONTAINS},
         "sum": {value: null, matchMode: FilterMatchMode.EQUALS},
-        "probability": {value: null, matchMode: FilterMatchMode.EQUALS},
+        "probability": {value: probability, matchMode: FilterMatchMode.IN},
         "sumProbability": {value: null, matchMode: FilterMatchMode.EQUALS}
     }
 
@@ -68,7 +95,8 @@ const ForecastTable = () => {
                     filterMatchModeOptions={matchModesName}
                     sortable
                     filter
-                    filterPlaceholder="Найти..."></Column>
+                    filterPlaceholder="Найти...">
+                </Column>
                 <Column
                     header="ВП"
                     field="sum"
@@ -84,6 +112,7 @@ const ForecastTable = () => {
                     dataType="numeric"
                     sortable
                     filter
+                    showFilterMenu={false}
                     body={probabilityFormat}
                     filterElement={probabilityFilter}
                 />
