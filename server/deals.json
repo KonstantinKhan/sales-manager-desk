@@ -2,20 +2,38 @@
   "deals": [
     {
       "name": "Первый заказчик",
-      "sum": 4000000,
-      "sumProbability": 2400000,
+      "sum": 600000,
+      "sumProbability": 360000,
       "probability": 60
     },
     {
       "name": "Второй заказчик",
-      "sum": 10000000,
-      "sumProbability": 1500000,
+      "sum": 100000,
+      "sumProbability": 15000,
       "probability": 15
     },
     {
       "name": "Третий заказчик",
-      "sum": 1000000,
-      "sumProbability": 800000,
+      "sum": 200000,
+      "sumProbability": 50000,
+      "probability": 25
+    },
+    {
+      "name": "Четверный заказчик",
+      "sum": 1600000,
+      "sumProbability": 640000,
+      "probability": 40
+    },
+    {
+      "name": "Пятый заказчик",
+      "sum": 300000,
+      "sumProbability": 300000,
+      "probability": 100
+    },
+    {
+      "name": "Шестой заказчик",
+      "sum": 800000,
+      "sumProbability": 640000,
       "probability": 80
     }
   ]

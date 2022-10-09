@@ -17,7 +17,11 @@ class App extends Component {
             endsWith: 'Заканчивается',
             equals: 'Равно',
             notEquals: 'Не равно',
-            noFilter: 'Без фильтра'
+            noFilter: 'Без фильтра',
+            lt: "Меньше чем",
+            lte: "Меньше чем или равно",
+            gt: "Более чем",
+            gte: "Более чем или равно",
         })
         locale('ru')
     }
