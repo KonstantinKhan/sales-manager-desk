@@ -13,7 +13,7 @@ class MenuRoutes extends Component {
         return (
             <div className="col-offset-1 col-11">
                 <Routes>
-                    <Route path="/main" element={<Main/>}/>
+                    <Route path="/" element={<Main/>}/>
                     <Route path="/deals" element={<Deals/>}/>
                     <Route path="/communicate" element={<Communicate/>}/>
                 </Routes>

@@ -1,38 +1,38 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./forecastTable.sass"
-import {DataTable} from "primereact/datatable";
-import {Column} from "primereact/column"
-import {FilterMatchMode, FilterOperator, InputNumber, MultiSelect} from "primereact";
-import {useGetDealsQuery} from "../../../redux";
-import {useAppSelector} from "../../../redux/hooks";
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column"
+import { FilterMatchMode, FilterOperator, InputNumber, MultiSelect } from "primereact";
+import { useGetDealsQuery } from "../../../redux";
+import { useAppSelector } from "../../../redux/hooks";
 
 const ForecastTable = () => {
 
     const probabilities = [
-        {name: '15%', value: 15},
-        {name: '25%', value: 25},
-        {name: '40%', value: 40},
-        {name: '60%', value: 60},
-        {name: '80%', value: 80},
-        {name: '100%', value: 100},
+        { name: '15%', value: 15 },
+        { name: '25%', value: 25 },
+        { name: '40%', value: 40 },
+        { name: '60%', value: 60 },
+        { name: '80%', value: 80 },
+        { name: '100%', value: 100 },
     ]
 
     const probability = useAppSelector(state => state.probability.probability.value && [state.probability.probability.value])
 
-    const {data = []} = useGetDealsQuery()
+    const { data = [] } = useGetDealsQuery()
 
     const sumFormat = (rowData: any) => {
-        return (rowData.sum).toLocaleString('RU', {minimumFractionDigits: 0}) + " руб."
+        return (rowData.sum).toLocaleString('RU', { minimumFractionDigits: 0 }) + " руб."
     }
 
     const sumProbabilityFormat = (rowData: any) => {
-        return (rowData.sumProbability).toLocaleString('RU', {minimumFractionDigits: 0}) + " руб."
+        return (rowData.sumProbability).toLocaleString('RU', { minimumFractionDigits: 0 }) + " руб."
     }
 
     const sumFilter = (options: any) => {
         return <InputNumber
             value={options.value}
-            onChange={(e) => options.filterApplyCallback(e.value)}/>
+            onChange={(e) => options.filterApplyCallback(e.value)} />
     }
 
     const probabilityFilter = (options: any) => {
@@ -43,7 +43,7 @@ const ForecastTable = () => {
             onChange={(e) => options.filterApplyCallback(e.value)}
             optionLabel="name"
             placeholder="Все"
-            // maxSelectedLabels={1}
+        // maxSelectedLabels={1}
         />
     }
 
@@ -58,7 +58,7 @@ const ForecastTable = () => {
     const sumProbabilityFilter = (options: any) => {
         return <InputNumber
             value={options.value}
-            onChange={(e) => options.filterApplyCallback(e.value)}/>
+            onChange={(e) => options.filterApplyCallback(e.value)} />
     }
 
     const probabilityFormat = (rowData: any) => {
@@ -67,15 +67,38 @@ const ForecastTable = () => {
     }
 
     const matchModesName = [
-        {label: "Содержит", value: FilterMatchMode.CONTAINS},
-        {label: "Не содержит", value: FilterMatchMode.NOT_CONTAINS}
+        { label: "Содержит", value: FilterMatchMode.CONTAINS },
+        { label: "Не содержит", value: FilterMatchMode.NOT_CONTAINS }
     ]
 
     const filters = {
-        "name": {value: null, matchMode: FilterMatchMode.CONTAINS},
-        "sum": {value: null, matchMode: FilterMatchMode.EQUALS},
-        "probability": {value: probability, matchMode: FilterMatchMode.IN},
-        "sumProbability": {value: null, matchMode: FilterMatchMode.EQUALS}
+        "name": { value: null, matchMode: FilterMatchMode.CONTAINS },
+        "sum": { value: null, matchMode: FilterMatchMode.EQUALS },
+        "probability": { value: probability, matchMode: FilterMatchMode.IN },
+        "sumProbability": { value: null, matchMode: FilterMatchMode.EQUALS }
+    }
+
+    const actionBodyTemplate = (rowData: any) => {
+        console.log(rowData);
+
+        return (
+            <>
+                {rowData.actions[0].phoneToday && <i style={{ paddingRight: '1rem', color: "green" }} className="pi pi-phone"></i>}
+                {rowData.actions[1].phoneWeek && <i style={{ paddingRight: '1rem', color: "orange" }} className="pi pi-phone"></i>}
+                {rowData.actions[2].mailToday && <i style={{ paddingRight: '1rem', color: "green" }} className="pi pi-envelope"></i>}
+                {rowData.actions[3].mailWeek && <i style={{ paddingRight: '1rem', color: "orange" }} className="pi pi-envelope"></i>}
+                {rowData.actions[4].projectTaskToday && <i style={{ paddingRight: '1rem', color: "green" }} className="pi pi-megaphone"></i>}
+                {rowData.actions[5].projectTaskToday && <i style={{ paddingRight: '1rem', color: "orange" }} className="pi pi-megaphone"></i>}
+            </>
+        )
+    }
+
+    const verifiedBodyTemplate = (rowData: any) => {
+        return (
+            <>
+                <i className="pi pi-verified" style={{ color: rowData.verified ? "green" : "red" }}></i>
+            </>
+        )
     }
 
     return (
@@ -124,6 +147,15 @@ const ForecastTable = () => {
                     filter
                     body={sumProbabilityFormat}
                     filterElement={sumProbabilityFilter}
+                />
+                <Column
+                    header="Действия"
+                    body={actionBodyTemplate}
+                >
+                </Column>
+                <Column
+                    header="Авторизация"
+                    body={verifiedBodyTemplate}
                 />
             </DataTable>
         </div>

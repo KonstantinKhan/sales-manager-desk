@@ -1,40 +1,166 @@
 {
   "deals": [
     {
-      "name": "Первый заказчик",
+      "name": "ООО \"Факел\"",
       "sum": 600000,
       "sumProbability": 360000,
-      "probability": 60
+      "probability": 60,
+      "actions": [
+        {
+          "phoneToday": false
+        },
+        {
+          "phoneWeek": true
+        },
+        {
+          "mailToday": false
+        },
+        {
+          "mailWeek": true
+        },
+        {
+          "projectTaskToday": true
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": true
     },
     {
-      "name": "Второй заказчик",
+      "name": "АО \"Машиностроительный завод\"",
       "sum": 100000,
       "sumProbability": 15000,
-      "probability": 15
+      "probability": 15,
+      "actions": [
+        {
+          "phoneToday": false
+        },
+        {
+          "phoneWeek": false
+        },
+        {
+          "mailToday": true
+        },
+        {
+          "mailWeek": false
+        },
+        {
+          "projectTaskToday": false
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": false
     },
     {
-      "name": "Третий заказчик",
+      "name": "ООО \"ПКФ \"Заря\"",
       "sum": 200000,
       "sumProbability": 50000,
-      "probability": 25
+      "probability": 25,
+      "actions": [
+        {
+          "phoneToday": true
+        },
+        {
+          "phoneWeek": false
+        },
+        {
+          "mailToday": false
+        },
+        {
+          "mailWeek": true
+        },
+        {
+          "projectTaskToday": false
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": false
     },
     {
-      "name": "Четверный заказчик",
+      "name": "ООО \"Механическое предприятие\"",
       "sum": 1600000,
       "sumProbability": 640000,
-      "probability": 40
+      "probability": 40,
+      "actions": [
+        {
+          "phoneToday": false
+        },
+        {
+          "phoneWeek": false
+        },
+        {
+          "mailToday": false
+        },
+        {
+          "mailWeek": true
+        },
+        {
+          "projectTaskToday": false
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": true
     },
     {
-      "name": "Пятый заказчик",
+      "name": "ООО \"Конструкторское бюро\"",
       "sum": 300000,
       "sumProbability": 300000,
-      "probability": 100
+      "probability": 100,
+      "actions": [
+        {
+          "phoneToday": true
+        },
+        {
+          "phoneWeek": true
+        },
+        {
+          "mailToday": false
+        },
+        {
+          "mailWeek": false
+        },
+        {
+          "projectTaskToday": false
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": true
     },
     {
-      "name": "Шестой заказчик",
+      "name": "ООО \"Фирма МашСервис\"",
       "sum": 800000,
       "sumProbability": 640000,
-      "probability": 80
+      "probability": 80,
+      "actions": [
+        {
+          "phoneToday": true
+        },
+        {
+          "phoneWeek": false
+        },
+        {
+          "mailToday": false
+        },
+        {
+          "mailWeek": false
+        },
+        {
+          "projectTaskToday": false
+        },
+        {
+          "projectTaskWeek": false
+        }
+      ],
+      "verified": true
     }
   ]
 }

@@ -19,7 +19,7 @@ class Navigation extends Component {
                 <ul>
                     <li key={0}>
                         <NavLink 
-                            className="menu__item" to="/main">
+                            className="menu__item" to="/">
                             <img draggable={false} src={main} alt="target" />
                             <span>Главная</span>
                         </NavLink>
