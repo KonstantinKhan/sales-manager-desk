@@ -162,5 +162,43 @@
       ],
       "verified": true
     }
+  ],
+  "salesProgram": [
+    {
+      "quarter": "first",
+      "gross_profit": 4000000,
+      "compass": 4000000,
+      "loodsman": 2000000,
+      "vertical": 600000,
+      "implementationServices": 300000,
+      "trainingServices": 400000
+    },
+    {
+      "quarter": "second",
+      "gross_profit": 5000000,
+      "compass": 2000000,
+      "loodsman": 2000000,
+      "vertical": 5000000,
+      "implementationServices": 400000,
+      "trainingServices": 100000
+    },
+    {
+      "quarter": "third",
+      "gross_profit": 3800000,
+      "compass": 5000000,
+      "loodsman": 800000,
+      "vertical": 600000,
+      "implementationServices": 450000,
+      "trainingServices": 150000
+    },
+    {
+      "quarter": "fourth",
+      "gross_profit": 9500000,
+      "compass": 8000000,
+      "loodsman": 3000000,
+      "vertical": 2000000,
+      "implementationServices": 2000000,
+      "trainingServices": 1000000
+    }
   ]
 }
